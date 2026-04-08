@@ -109,7 +109,10 @@ const UrlText = styled.span`
   color: ${({ theme }) => theme.colors.info.DEFAULT};
 `;
 
-const URL = 'https://calangoui.by2.com.br/llm';
+const LLM_URL = 'https://calangoui.by2.com.br/llm';
+const MCP_URL = 'https://mcp.calangoui.by2.com.br/mcp';
+
+const URL = LLM_URL;
 
 const PROMPT_SIMPLE = `Consulte ${URL} e use como referência para construir a UI com o design system calangoui.`;
 
@@ -178,6 +181,21 @@ export function LlmPage() {
       <Hint style={{ marginTop: '24px', textAlign: 'center' }}>
         O endpoint /llm retorna um Markdown completo com todos os componentes, tokens, exemplos e patterns do calangoui.
       </Hint>
+
+      <StepCard style={{ marginTop: '40px', borderColor: '#7c3aed44', background: 'transparent' }}>
+        <StepTitle><StepNumber style={{ background: '#7c3aed' }}>✦</StepNumber>MCP Server — Conexão nativa para AI agents</StepTitle>
+        <Hint>Para ferramentas como Claude Code, Cursor ou qualquer cliente MCP, conecte diretamente ao servidor:</Hint>
+        <div style={{ marginTop: '10px' }}>
+          <Copyable text={MCP_URL} />
+        </div>
+        <Hint style={{ marginTop: '16px', marginBottom: '6px' }}>Claude Code (CLI):</Hint>
+        <Copyable text={`claude mcp add calangoui --transport http ${MCP_URL}`} />
+        <Hint style={{ marginTop: '16px', marginBottom: '6px' }}>Claude Desktop (claude_desktop_config.json):</Hint>
+        <Copyable text={`{\n  "mcpServers": {\n    "calangoui": {\n      "url": "${MCP_URL}"\n    }\n  }\n}`} />
+        <Hint style={{ marginTop: '12px' }}>
+          O MCP expõe 4 tools: <code>list_components</code>, <code>get_component</code>, <code>get_tokens</code> e <code>search_components</code>.
+        </Hint>
+      </StepCard>
     </Container>
   );
 }

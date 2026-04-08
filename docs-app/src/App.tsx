@@ -168,6 +168,7 @@ const navSections: NavSection[] = [
   { id: 'home', label: 'Overview', group: 'Getting Started' },
   { id: 'tokens', label: 'Design Tokens', group: 'Getting Started' },
   { id: 'theme', label: 'Theme Engine', group: 'Getting Started' },
+  { id: 'llm', label: '✦ MCP Server', group: 'Getting Started' },
   { id: 'primitives', label: 'Primitives', group: 'Components' },
   { id: 'inputs', label: 'Inputs', group: 'Components' },
   { id: 'feedback', label: 'Feedback', group: 'Components' },
@@ -201,11 +202,12 @@ function HomePage({ onNavigate }: { onNavigate: (s: string) => void }) {
       <HeroDesc>
         A React design system built for the AI era. Every component ships with a machine-readable spec,
         making it trivial for LLMs to generate correct, on-brand UI from natural language.
-        Built with styled-components, Radix UI, and TypeScript.
+        Built with styled-components, Radix UI, and TypeScript — with a native MCP server so any AI agent
+        can query components, tokens and examples directly.
       </HeroDesc>
       <div style={{ display: 'flex', gap: '8px', marginTop: '24px', flexWrap: 'wrap', alignItems: 'center' }}>
         <Button variant="solid" size="sm">npm i calangoui</Button>
-        <Button variant="outline" size="sm">GitHub</Button>
+        <a href="https://github.com/by2-studio/calangoui" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}><Button variant="outline" size="sm">GitHub</Button></a>
         <Button
           variant="solid"
           size="sm"
@@ -235,6 +237,10 @@ function HomePage({ onNavigate }: { onNavigate: (s: string) => void }) {
         <StatItem>
           <StatNumber>A11y</StatNumber>
           <StatLabel>Radix UI</StatLabel>
+        </StatItem>
+        <StatItem>
+          <StatNumber>MCP</StatNumber>
+          <StatLabel>AI Native</StatLabel>
         </StatItem>
       </StatGrid>
     </div>
