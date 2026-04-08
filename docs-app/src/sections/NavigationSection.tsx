@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Tabs, Breadcrumb, Pagination, Sidebar, Stack, Text, useTheme } from 'calangoui';
+import { Tabs, Breadcrumb, Pagination, Sidebar, NavTopBar, Stack, Text, Button, useTheme } from 'calangoui';
 import { Section, SectionTitle, SectionDesc, SubTitle, DemoWithCode } from './DocSection';
 
 export function NavigationSection() {
@@ -12,6 +12,61 @@ export function NavigationSection() {
       <SectionDesc>
         Tabs, Breadcrumb, Pagination e Sidebar. Todos com Radix UI.
       </SectionDesc>
+
+      <SubTitle>NavTopBar</SubTitle>
+      <DemoWithCode code={`<NavTopBar
+  logo={<span>MyApp</span>}
+  links={[
+    { label: 'Dashboard', active: true },
+    { label: 'Analytics' },
+    { label: 'Settings' },
+  ]}
+  actions={<Button size="sm" variant="outline">Sign in</Button>}
+/>`}>
+        <div style={{ border: `1px solid ${theme.colors.border}`, borderRadius: theme.radii.md, overflow: 'hidden' }}>
+          <NavTopBar
+            logo={<span style={{ fontWeight: 600 }}>MyApp</span>}
+            links={[
+              { label: 'Dashboard', active: true },
+              { label: 'Analytics' },
+              { label: 'Customers' },
+              { label: 'Settings' },
+            ]}
+            actions={
+              <>
+                <Button size="sm" variant="ghost">Docs</Button>
+                <Button size="sm" variant="outline">Sign in</Button>
+              </>
+            }
+          />
+        </div>
+      </DemoWithCode>
+
+      <SubTitle>NavTopBar — Sticky + Logo</SubTitle>
+      <DemoWithCode code={`<NavTopBar
+  sticky
+  logo={<><LogoIcon /><span>calangoui</span></>}
+  links={[{ label: 'Components' }, { label: 'Tokens' }]}
+  actions={<Button size="sm">Get started</Button>}
+/>`}>
+        <div style={{ border: `1px solid ${theme.colors.border}`, borderRadius: theme.radii.md, overflow: 'hidden' }}>
+          <NavTopBar
+            sticky
+            logo={
+              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ width: 20, height: 20, borderRadius: '50%', background: theme.colors.primary, display: 'inline-block' }} />
+                <span>calangoui</span>
+              </span>
+            }
+            links={[
+              { label: 'Components' },
+              { label: 'Tokens' },
+              { label: 'For AI', active: true },
+            ]}
+            actions={<Button size="sm" variant="solid">Get started</Button>}
+          />
+        </div>
+      </DemoWithCode>
 
       <SubTitle>Tabs (Radix)</SubTitle>
       <DemoWithCode code={`<Tabs.Root defaultValue="overview">

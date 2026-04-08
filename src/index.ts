@@ -28,7 +28,8 @@ export { Dialog, AlertDialog, Drawer, Popover, Tooltip, DropdownMenu, ContextMen
 export type { DrawerSide } from './components/overlay';
 
 // Navigation
-export { Tabs, Sidebar, Breadcrumb, Pagination, NavigationMenu } from './components/navigation';
+export { Tabs, Sidebar, Breadcrumb, Pagination, NavigationMenu, NavTopBar } from './components/navigation';
+export type { NavTopBarProps, NavTopBarLink } from './components/navigation';
 export type { PaginationProps } from './components/navigation';
 
 // Data
