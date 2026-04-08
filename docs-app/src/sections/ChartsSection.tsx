@@ -44,12 +44,6 @@ const stackedAreaData = [
   { label: 'Jun', value: 0, mobile: 68, desktop: 55, tablet: 30 },
 ];
 
-const donutData = [
-  { label: 'Desktop', value: 45, color: '#FFFFFF' },
-  { label: 'Mobile', value: 30, color: '#71717A' },
-  { label: 'Tablet', value: 15, color: '#3F3F46' },
-  { label: 'Other', value: 10, color: '#22C55E' },
-];
 
 const radarData = [
   { label: 'Speed', value: 85 },
@@ -71,6 +65,13 @@ const sparkSamples = [12, 18, 14, 22, 19, 28, 25, 32, 29, 35, 30, 38];
 
 export function ChartsSection() {
   const { theme } = useTheme();
+
+  const donutData = [
+    { label: 'Desktop', value: 45, color: theme.colors.foreground },
+    { label: 'Mobile', value: 30, color: theme.colors.mutedForeground },
+    { label: 'Tablet', value: 15, color: theme.colors.border },
+    { label: 'Other', value: 10, color: '#22C55E' },
+  ];
 
   return (
     <Section id="charts">
@@ -157,8 +158,8 @@ export function ChartsSection() {
         <BarChart
           data={multiLineData}
           dataKeys={[
-            { key: 'revenue', color: '#FFFFFF', name: 'Revenue' },
-            { key: 'costs', color: '#71717A', name: 'Costs' },
+            { key: 'revenue', color: theme.colors.foreground, name: 'Revenue' },
+            { key: 'costs', color: theme.colors.mutedForeground, name: 'Costs' },
             { key: 'profit', color: '#22C55E', name: 'Profit' },
           ]}
           showLegend
@@ -185,7 +186,7 @@ export function ChartsSection() {
         <LineChart
           data={multiLineData}
           dataKeys={[
-            { key: 'revenue', color: '#FFFFFF', name: 'Revenue' },
+            { key: 'revenue', color: theme.colors.foreground, name: 'Revenue' },
             { key: 'costs', color: '#EF4444', name: 'Costs', dashed: true },
             { key: 'profit', color: '#22C55E', name: 'Profit' },
           ]}
@@ -212,7 +213,7 @@ export function ChartsSection() {
           stacked
           dataKeys={[
             { key: 'mobile', color: '#3B82F6', name: 'Mobile' },
-            { key: 'desktop', color: '#FFFFFF', name: 'Desktop' },
+            { key: 'desktop', color: theme.colors.foreground, name: 'Desktop' },
             { key: 'tablet', color: '#22C55E', name: 'Tablet' },
           ]}
         />
@@ -248,7 +249,7 @@ export function ChartsSection() {
         <DonutChart
           data={[
             { label: 'Chrome', value: 65, color: '#4285F4' },
-            { label: 'Safari', value: 19, color: '#FFFFFF' },
+            { label: 'Safari', value: 19, color: theme.colors.foreground },
             { label: 'Firefox', value: 10, color: '#FF7139' },
             { label: 'Other', value: 6, color: '#71717A' },
           ]}
