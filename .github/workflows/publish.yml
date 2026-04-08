@@ -41,7 +41,14 @@ jobs:
         run: npm ci
 
       - name: Run tests
-        run: npm test
+        shell: bash
+        run: |
+          TEST_COUNT=$(find src -type f \( -name '*.test.ts' -o -name '*.test.tsx' \) | wc -l | tr -d ' ')
+          if [ "${TEST_COUNT}" -gt 0 ]; then
+            npm test
+          else
+            echo "No test files found (src/**/*.test.ts[x]); skipping."
+          fi
 
       - name: Build
         run: npm run build
