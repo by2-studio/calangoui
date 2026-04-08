@@ -3,7 +3,7 @@
 # ============================================
 # Stage 1: Build
 # ============================================
-FROM node:20-alpine AS build
+FROM node:22-bookworm-slim AS build
 
 WORKDIR /app
 
@@ -20,7 +20,7 @@ RUN npm run build
 # ============================================
 # Stage 2: Runtime
 # ============================================
-FROM node:20-alpine AS runtime
+FROM node:22-bookworm-slim AS runtime
 
 WORKDIR /app
 
