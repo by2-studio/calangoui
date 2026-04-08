@@ -193,13 +193,17 @@ if (process.env.TRANSPORT === 'http') {
 
   app.get('/health', (_req, res) => { res.json({ status: 'ok' }); });
 
-  app.post('/mcp', async (req, res) => {
-    const s = createServer();
+  // Stateless: each request gets its own transport connected to the shared server
+  const handleMcp = async (req: express.Request, res: express.Response) => {
     const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined });
-    await s.connect(transport);
+    await server.connect(transport);
     await transport.handleRequest(req, res, req.body);
-    res.on('close', () => { transport.close(); s.close(); });
-  });
+    res.on('close', () => { transport.close(); });
+  };
+
+  app.post('/mcp', handleMcp);
+  app.get('/mcp', handleMcp);
+  app.delete('/mcp', handleMcp);
 
   app.listen(PORT, () => console.log(`calangoui MCP server listening on :${PORT}`));
 } else {
