@@ -2,6 +2,10 @@
   "name": "@by2-ai/calangoui",
   "version": "0.1.0",
   "description": "A dark-first, minimalist React design system with OLED aesthetics",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/by2-studio/calangoui"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
