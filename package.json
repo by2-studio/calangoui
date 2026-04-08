@@ -1,5 +1,5 @@
 {
-  "name": "calangoui",
+  "name": "@by2-ai/calangoui",
   "version": "0.1.0",
   "description": "A dark-first, minimalist React design system with OLED aesthetics",
   "type": "module",

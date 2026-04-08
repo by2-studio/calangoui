@@ -206,7 +206,7 @@ function HomePage({ onNavigate }: { onNavigate: (s: string) => void }) {
         can query components, tokens and examples directly.
       </HeroDesc>
       <div style={{ display: 'flex', gap: '8px', marginTop: '24px', flexWrap: 'wrap', alignItems: 'center' }}>
-        <Button variant="solid" size="sm">npm i calangoui</Button>
+        <Button variant="solid" size="sm">npm i @by2-ai/calangoui</Button>
         <a href="https://github.com/by2-studio/calangoui" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}><Button variant="outline" size="sm">GitHub</Button></a>
         <Button
           variant="solid"

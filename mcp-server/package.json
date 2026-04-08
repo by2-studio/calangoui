@@ -1,8 +1,20 @@
 {
-  "name": "@calangoui/mcp",
+  "name": "@by2-ai/calangoui-mcp",
   "version": "0.1.0",
   "description": "MCP server for the calangoui design system",
   "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "calangoui",
+    "design-system",
+    "ai",
+    "claude"
+  ],
+  "files": [
+    "dist"
+  ],
   "bin": {
     "calangoui-mcp": "./dist/index.js"
   },
