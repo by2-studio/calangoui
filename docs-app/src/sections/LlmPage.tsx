@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { useTheme } from 'calangoui';
+import { useTheme, Tabs } from 'calangoui';
 
 const Container = styled.div`
   max-width: 640px;
@@ -114,30 +114,6 @@ const MCP_URL = 'https://mcp.calangoui.by2.com.br/mcp';
 
 const URL = LLM_URL;
 
-const TabBar = styled.div`
-  display: flex;
-  gap: 4px;
-  padding: 4px;
-  background: ${({ theme }) => theme.colors.muted};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radii.lg};
-  margin-bottom: 24px;
-`;
-
-const Tab = styled.button<{ $active: boolean }>`
-  flex: 1;
-  padding: 8px 16px;
-  font-size: ${({ theme }) => theme.typography.fontSize.sm};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
-  border-radius: ${({ theme }) => theme.radii.md};
-  border: none;
-  cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
-  background: ${({ theme, $active }) => $active ? theme.colors.card : 'transparent'};
-  color: ${({ theme, $active }) => $active ? theme.colors.foreground : theme.colors.mutedForeground};
-  border: 1px solid ${({ theme, $active }) => $active ? theme.colors.border : 'transparent'};
-  &:hover { color: ${({ theme }) => theme.colors.foreground}; }
-`;
 
 const PROMPT_SIMPLE = `Consulte ${URL} e use como referência para construir a UI com o design system calangoui.`;
 
@@ -160,7 +136,6 @@ function Copyable({ text }: { text: string }) {
 export function LlmPage() {
   useTheme();
   const [copied, setCopied] = useState(false);
-  const [tab, setTab] = useState<'mcp' | 'llm'>('mcp');
 
   return (
     <Container>
@@ -170,31 +145,31 @@ export function LlmPage() {
         Basta pedir ao seu assistente de IA para consultar a URL abaixo.
       </Desc>
 
-      <TabBar>
-        <Tab $active={tab === 'mcp'} onClick={() => setTab('mcp')}>✦ MCP Server</Tab>
-        <Tab $active={tab === 'llm'} onClick={() => setTab('llm')}>LLM Text Raw</Tab>
-      </TabBar>
+      <Tabs.Root defaultValue="mcp" style={{ marginBottom: '8px' }}>
+        <Tabs.List>
+          <Tabs.Trigger value="mcp">✦ MCP Server</Tabs.Trigger>
+          <Tabs.Trigger value="llm">LLM Text Raw</Tabs.Trigger>
+        </Tabs.List>
 
-      {tab === 'mcp' && (
-        <StepCard>
-          <StepTitle><StepNumber>✦</StepNumber>MCP Server — Conexão nativa para AI agents</StepTitle>
-          <Hint>Para ferramentas como Claude Code, Cursor ou qualquer cliente MCP, conecte diretamente ao servidor:</Hint>
-          <div style={{ marginTop: '10px' }}>
-            <Copyable text={MCP_URL} />
-          </div>
-          <Hint style={{ marginTop: '16px', marginBottom: '6px' }}>Claude Code (CLI):</Hint>
-          <Copyable text={`claude mcp add calangoui --transport http ${MCP_URL}`} />
-          <Hint style={{ marginTop: '16px', marginBottom: '6px' }}>Claude Desktop (claude_desktop_config.json):</Hint>
-          <Copyable text={`{\n  "mcpServers": {\n    "calangoui": {\n      "url": "${MCP_URL}"\n    }\n  }\n}`} />
-          <Hint style={{ marginTop: '12px' }}>
-            O MCP expõe 4 tools: <code>list_components</code>, <code>get_component</code>, <code>get_tokens</code> e <code>search_components</code>.
-          </Hint>
-        </StepCard>
-      )}
+        <Tabs.Content value="mcp">
+          <StepCard style={{ marginTop: '16px' }}>
+            <StepTitle><StepNumber>✦</StepNumber>MCP Server — Conexão nativa para AI agents</StepTitle>
+            <Hint>Para ferramentas como Claude Code, Cursor ou qualquer cliente MCP, conecte diretamente ao servidor:</Hint>
+            <div style={{ marginTop: '10px' }}>
+              <Copyable text={MCP_URL} />
+            </div>
+            <Hint style={{ marginTop: '16px', marginBottom: '6px' }}>Claude Code (CLI):</Hint>
+            <Copyable text={`claude mcp add calangoui --transport http ${MCP_URL}`} />
+            <Hint style={{ marginTop: '16px', marginBottom: '6px' }}>Claude Desktop (claude_desktop_config.json):</Hint>
+            <Copyable text={`{\n  "mcpServers": {\n    "calangoui": {\n      "url": "${MCP_URL}"\n    }\n  }\n}`} />
+            <Hint style={{ marginTop: '12px' }}>
+              O MCP expõe 4 tools: <code>list_components</code>, <code>get_component</code>, <code>get_tokens</code> e <code>search_components</code>.
+            </Hint>
+          </StepCard>
+        </Tabs.Content>
 
-      {tab === 'llm' && (
-        <>
-          <UrlBox>
+        <Tabs.Content value="llm">
+          <UrlBox style={{ marginTop: '16px' }}>
             <UrlText>{URL}</UrlText>
             <CopyBtn
               style={{ alignSelf: 'center' }}
@@ -231,8 +206,8 @@ export function LlmPage() {
           <Hint style={{ marginTop: '24px', textAlign: 'center' }}>
             O endpoint /llm retorna um Markdown completo com todos os componentes, tokens, exemplos e patterns do calangoui.
           </Hint>
-        </>
-      )}
+        </Tabs.Content>
+      </Tabs.Root>
     </Container>
   );
 }
