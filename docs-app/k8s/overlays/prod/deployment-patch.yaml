@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: app
-          image: ghcr.io/by2-studio/calangoui-docs:latest
+          image: ghcr.io/by2-studio/calangoui-docs:ad6b162c1d401a918f54fccb9800637736190934
