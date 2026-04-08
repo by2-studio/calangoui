@@ -644,6 +644,31 @@ export const components: ComponentSpec[] = [
     ],
   },
 
+  {
+    name: 'NavTopBar',
+    category: 'navigation',
+    import: "import { NavTopBar } from 'calangoui'",
+    description: 'Horizontal top navigation bar with logo, nav links, and an actions slot.',
+    keywords: ['header', 'topbar', 'navbar', 'navigation', 'links', 'logo', 'sticky'],
+    props: [
+      { name: 'logo', type: 'ReactNode', required: false, description: 'Brand/logo content on the left' },
+      { name: 'links', type: 'NavTopBarLink[]', required: false, description: 'Nav links: { label, href?, active?, icon?, onClick? }' },
+      { name: 'actions', type: 'ReactNode', required: false, description: 'Right-side slot for buttons, avatar, theme toggle, etc.' },
+      { name: 'sticky', type: 'boolean', required: false, default: 'false', description: 'Stick to top of viewport (z-index 40)' },
+    ],
+    variants: [],
+    examples: [
+      {
+        label: 'Basic',
+        code: `<NavTopBar\n  logo={<span>MyApp</span>}\n  links={[\n    { label: 'Dashboard', active: true },\n    { label: 'Analytics' },\n    { label: 'Settings' },\n  ]}\n  actions={<Button size="sm" variant="outline">Sign in</Button>}\n/>`,
+      },
+      {
+        label: 'Sticky with logo',
+        code: `<NavTopBar\n  sticky\n  logo={<><LogoIcon /><span>calangoui</span></>}\n  links={[{ label: 'Components' }, { label: 'Tokens' }, { label: 'For AI', active: true }]}\n  actions={<Button size="sm">Get started</Button>}\n/>`,
+      },
+    ],
+  },
+
   // ─── DATA DISPLAY ────────────────────────────────────────────────────────────
   {
     name: 'Table',
