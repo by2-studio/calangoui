@@ -42,7 +42,7 @@ const StyledBadge = styled.span<{ $v: BadgeVariant; $c: string; $sz: BadgeSize; 
     }
   }}
 
-  ${({ $dot, $c }) =>
+  ${({ $dot, $c, $v, theme }) =>
     $dot &&
     css`
       &::before {
@@ -50,7 +50,7 @@ const StyledBadge = styled.span<{ $v: BadgeVariant; $c: string; $sz: BadgeSize; 
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background: ${$c};
+        background: ${$v === 'solid' ? theme.colors.background : $c};
       }
     `}
 `;
