@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type ChangeEvent } from 'react';
 import {
   useTheme, Button, Input, Textarea, InputGroup, Label,
   Checkbox, RadioGroup, Switch, Slider, Select, MaskedInput, DatePicker,
@@ -167,7 +167,7 @@ export function InputsSection() {
                 <Checkbox
                   checked={i === 0 ? checkVal : undefined}
                   defaultChecked={i === 0}
-                  onCheckedChange={i === 0 ? (v) => setCheckVal(v) : undefined}
+                  onCheckedChange={i === 0 ? (v: boolean | 'indeterminate') => setCheckVal(v) : undefined}
                 />
                 <Text size={theme.typography.fontSize.sm}>{label}</Text>
               </Flex>
@@ -194,11 +194,11 @@ export function InputsSection() {
 <Switch defaultChecked size="sm" />`}>
         <Flex $gap="24px" $align="center">
           <Flex $gap="8px" $align="center">
-            <Switch checked={switchOn} onCheckedChange={setSwitchOn} />
+            <Switch checked={switchOn} onCheckedChange={(v: boolean) => setSwitchOn(v)} />
             <Text size={theme.typography.fontSize.sm}>{switchOn ? 'On' : 'Off'}</Text>
           </Flex>
           <Flex $gap="8px" $align="center">
-            <Switch defaultChecked size="sm" />
+            <Switch defaultChecked={true} size="sm" />
             <Text size={theme.typography.fontSize.sm}>Small</Text>
           </Flex>
         </Flex>
@@ -211,7 +211,7 @@ export function InputsSection() {
             <Text size={theme.typography.fontSize.sm}>Volume</Text>
             <Text size={theme.typography.fontSize.sm} mono>{sliderVal[0]}%</Text>
           </Flex>
-          <Slider value={sliderVal} onValueChange={setSliderVal} max={100} step={1} />
+          <Slider value={sliderVal} onValueChange={(v: number[]) => setSliderVal(v)} max={100} step={1} />
         </Stack>
       </DemoWithCode>
 
@@ -335,7 +335,7 @@ export function InputsSection() {
           <SearchBar placeholder="With shortcut hint" shortcut="⌘K" />
           <SearchBar
             value={searchVal}
-            onChange={(e) => setSearchVal(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchVal(e.target.value)}
             onClear={() => setSearchVal('')}
             placeholder="Type to search..."
           />

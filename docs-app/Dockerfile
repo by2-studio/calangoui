@@ -24,6 +24,8 @@ WORKDIR /sdk
 # Reconstrói o diretório pai para que `calangoui: "file:.."` resolva
 COPY --from=build-sdk /sdk/dist ./dist
 COPY --from=build-sdk /sdk/package.json ./package.json
+# node_modules do SDK necessários para TypeScript resolver tipos Radix (file: symlink aponta para /sdk/)
+COPY --from=build-sdk /sdk/node_modules ./node_modules
 
 COPY docs-app/package.json ./docs-app/
 

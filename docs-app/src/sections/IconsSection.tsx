@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {
-  useTheme, RoundedIcon, Flex, Stack, Grid, Text, Heading, Box, Button, Input,
+  useTheme, RoundedIcon, Flex, Stack, Grid, Text, Input,
   // Navigation & Arrows
   HiArrowUp, HiArrowDown, HiArrowLeft, HiArrowRight, HiArrowUpRight,
   HiChevronUp, HiChevronDown, HiChevronLeft, HiChevronRight, HiArrowPath, HiArrowTopRightOnSquare,

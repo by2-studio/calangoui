@@ -27,21 +27,21 @@ const lineData = [
 ];
 
 const multiLineData = [
-  { label: 'Jan', revenue: 40, costs: 24, profit: 16 },
-  { label: 'Feb', revenue: 55, costs: 28, profit: 27 },
-  { label: 'Mar', revenue: 48, costs: 30, profit: 18 },
-  { label: 'Apr', revenue: 72, costs: 32, profit: 40 },
-  { label: 'May', revenue: 65, costs: 35, profit: 30 },
-  { label: 'Jun', revenue: 88, costs: 38, profit: 50 },
+  { label: 'Jan', value: 0, revenue: 40, costs: 24, profit: 16 },
+  { label: 'Feb', value: 0, revenue: 55, costs: 28, profit: 27 },
+  { label: 'Mar', value: 0, revenue: 48, costs: 30, profit: 18 },
+  { label: 'Apr', value: 0, revenue: 72, costs: 32, profit: 40 },
+  { label: 'May', value: 0, revenue: 65, costs: 35, profit: 30 },
+  { label: 'Jun', value: 0, revenue: 88, costs: 38, profit: 50 },
 ];
 
 const stackedAreaData = [
-  { label: 'Jan', mobile: 40, desktop: 60, tablet: 20 },
-  { label: 'Feb', mobile: 45, desktop: 55, tablet: 22 },
-  { label: 'Mar', mobile: 52, desktop: 50, tablet: 25 },
-  { label: 'Apr', mobile: 58, desktop: 48, tablet: 28 },
-  { label: 'May', mobile: 62, desktop: 52, tablet: 24 },
-  { label: 'Jun', mobile: 68, desktop: 55, tablet: 30 },
+  { label: 'Jan', value: 0, mobile: 40, desktop: 60, tablet: 20 },
+  { label: 'Feb', value: 0, mobile: 45, desktop: 55, tablet: 22 },
+  { label: 'Mar', value: 0, mobile: 52, desktop: 50, tablet: 25 },
+  { label: 'Apr', value: 0, mobile: 58, desktop: 48, tablet: 28 },
+  { label: 'May', value: 0, mobile: 62, desktop: 52, tablet: 24 },
+  { label: 'Jun', value: 0, mobile: 68, desktop: 55, tablet: 30 },
 ];
 
 const donutData = [

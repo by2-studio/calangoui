@@ -130,7 +130,7 @@ function Copyable({ text }: { text: string }) {
 }
 
 export function LlmPage() {
-  const { theme } = useTheme();
+  useTheme();
   const [copied, setCopied] = useState(false);
 
   return (
