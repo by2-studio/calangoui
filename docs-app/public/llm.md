@@ -1,15 +1,15 @@
 # calangoui — AI First Design System
 
-> This document is the complete reference for the calangoui design system. Read it fully to understand all available components, tokens, and patterns. Always import from 'calangoui'.
+> This document is the complete reference for the calangoui design system. Read it fully to understand all available components, tokens, and patterns. Always import from '@by2-ai/calangoui'.
 
 ## Quick Start
 
 ```bash
-npm install calangoui styled-components recharts react-icons
+npm install @by2-ai/calangoui styled-components recharts react-icons
 ```
 
 ```tsx
-import { CalangoUIProvider } from 'calangoui';
+import { CalangoUIProvider } from '@by2-ai/calangoui';
 
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
 ### Colors
 
 ```ts
-import { colors } from 'calangoui';
+import { colors } from '@by2-ai/calangoui';
 
 // Base
 colors.black    // '#000000'
@@ -75,7 +75,7 @@ colors.info.dark        // '#2563EB'
 ### Typography
 
 ```ts
-import { typography } from 'calangoui';
+import { typography } from '@by2-ai/calangoui';
 
 typography.fontFamily.sans  // '"Geist Sans", "Inter", -apple-system, ...'
 typography.fontFamily.mono  // '"Geist Mono", "Fira Code", ...'
@@ -106,7 +106,7 @@ typography.lineHeight.relaxed  // 1.75
 ### Spacing (base 4px)
 
 ```ts
-import { spacing } from 'calangoui';
+import { spacing } from '@by2-ai/calangoui';
 
 spacing[0]    // '0px'
 spacing[0.5]  // '2px'
@@ -129,7 +129,7 @@ spacing[24]   // '96px'
 ### Border Radius
 
 ```ts
-import { radii } from 'calangoui';
+import { radii } from '@by2-ai/calangoui';
 
 radii.none  // '0px'
 radii.sm    // '4px'
@@ -143,7 +143,7 @@ radii.full  // '9999px'
 ### Shadows
 
 ```ts
-import { shadows } from 'calangoui';
+import { shadows } from '@by2-ai/calangoui';
 
 shadows.none  // 'none'
 shadows.sm    // '0 1px 2px rgba(0,0,0,0.4)'
@@ -156,7 +156,7 @@ shadows['2xl'] // '0 25px 50px rgba(0,0,0,0.5)'
 ### Z-Index
 
 ```ts
-import { zIndex } from 'calangoui';
+import { zIndex } from '@by2-ai/calangoui';
 
 zIndex.base      // 0
 zIndex.dropdown  // 1000
@@ -177,7 +177,7 @@ zIndex.tooltip   // 1700
 Wrap your app. Dark theme is the default.
 
 ```tsx
-import { CalangoUIProvider } from 'calangoui';
+import { CalangoUIProvider } from '@by2-ai/calangoui';
 
 <CalangoUIProvider>                           {/* dark by default */}
 <CalangoUIProvider defaultTheme="light">      {/* light mode */}
@@ -187,7 +187,7 @@ import { CalangoUIProvider } from 'calangoui';
 ### useTheme Hook
 
 ```tsx
-import { useTheme } from 'calangoui';
+import { useTheme } from '@by2-ai/calangoui';
 
 const { theme, isDark, toggleTheme } = useTheme();
 
@@ -207,7 +207,7 @@ theme.colors.accent            // dark: '#27272A', light: '#F4F4F5'
 ### createTheme
 
 ```tsx
-import { createTheme } from 'calangoui';
+import { createTheme } from '@by2-ai/calangoui';
 
 const myTheme = createTheme({
   colors: { primary: '#FF0000', primaryForeground: '#FFFFFF' },
@@ -229,7 +229,7 @@ Automatically included in CalangoUIProvider. Applies CSS reset, font setup, and 
 Polymorphic layout primitive.
 
 ```tsx
-import { Box } from 'calangoui';
+import { Box } from '@by2-ai/calangoui';
 
 <Box p="16px" bg={theme.colors.muted} radius={theme.radii.md} shadow={theme.shadows.md}>
   content
@@ -241,7 +241,7 @@ import { Box } from 'calangoui';
 ### Text
 
 ```tsx
-import { Text } from 'calangoui';
+import { Text } from '@by2-ai/calangoui';
 
 <Text size={theme.typography.fontSize.sm} weight={500} color={theme.colors.mutedForeground}>
   text
@@ -255,7 +255,7 @@ import { Text } from 'calangoui';
 ### Heading
 
 ```tsx
-import { Heading } from 'calangoui';
+import { Heading } from '@by2-ai/calangoui';
 
 <Heading>Default h2</Heading>
 <Heading as="h1" size={theme.typography.fontSize['4xl']}>Big</Heading>
@@ -266,7 +266,7 @@ import { Heading } from 'calangoui';
 ### Flex
 
 ```tsx
-import { Flex } from 'calangoui';
+import { Flex } from '@by2-ai/calangoui';
 
 <Flex $gap="12px" $align="center" $justify="space-between" $wrap="wrap" $direction="row">
   <div>A</div>
@@ -279,7 +279,7 @@ import { Flex } from 'calangoui';
 ### Stack
 
 ```tsx
-import { Stack } from 'calangoui';
+import { Stack } from '@by2-ai/calangoui';
 
 <Stack $spacing="8px" $align="stretch">
   <div>Item 1</div>
@@ -290,7 +290,7 @@ import { Stack } from 'calangoui';
 ### Grid
 
 ```tsx
-import { Grid } from 'calangoui';
+import { Grid } from '@by2-ai/calangoui';
 
 <Grid $columns={3} $gap="16px">...</Grid>
 <Grid $columns="repeat(auto-fill, minmax(200px, 1fr))" $gap="12px">...</Grid>
@@ -301,7 +301,7 @@ import { Grid } from 'calangoui';
 ### Divider
 
 ```tsx
-import { Divider } from 'calangoui';
+import { Divider } from '@by2-ai/calangoui';
 
 <Divider />                              {/* horizontal */}
 <Divider $orientation="vertical" />      {/* vertical */}
@@ -311,7 +311,7 @@ import { Divider } from 'calangoui';
 ### Icon
 
 ```tsx
-import { Icon } from 'calangoui';
+import { Icon } from '@by2-ai/calangoui';
 
 <Icon icon={SomeSvgComponent} size={24} color={theme.colors.primary} />
 ```
@@ -321,7 +321,7 @@ import { Icon } from 'calangoui';
 Icon with styled background.
 
 ```tsx
-import { RoundedIcon, HiSparkles } from 'calangoui';
+import { RoundedIcon, HiSparkles } from '@by2-ai/calangoui';
 
 <RoundedIcon icon={<HiSparkles />} variant="soft" size="lg" color={theme.colors.info.DEFAULT} />
 <RoundedIcon icon={<HiSparkles />} variant="solid" size="md" />
@@ -340,7 +340,7 @@ import { RoundedIcon, HiSparkles } from 'calangoui';
 ### Button
 
 ```tsx
-import { Button } from 'calangoui';
+import { Button } from '@by2-ai/calangoui';
 
 <Button variant="solid">Primary</Button>
 <Button variant="outline">Outline</Button>
@@ -363,7 +363,7 @@ import { Button } from 'calangoui';
 ### IconButton
 
 ```tsx
-import { IconButton } from 'calangoui';
+import { IconButton } from '@by2-ai/calangoui';
 
 <IconButton $v="outline" $sz="md" aria-label="Settings">⚙</IconButton>
 ```
@@ -371,7 +371,7 @@ import { IconButton } from 'calangoui';
 ### Input
 
 ```tsx
-import { Input, InputGroup, Label, ErrorText } from 'calangoui';
+import { Input, InputGroup, Label, ErrorText } from '@by2-ai/calangoui';
 
 <InputGroup>
   <Label>Email</Label>
@@ -392,7 +392,7 @@ import { Input, InputGroup, Label, ErrorText } from 'calangoui';
 ### Textarea
 
 ```tsx
-import { Textarea } from 'calangoui';
+import { Textarea } from '@by2-ai/calangoui';
 
 <Textarea placeholder="Write..." />
 <Textarea error="Too short" resize="none" />
@@ -405,7 +405,7 @@ import { Textarea } from 'calangoui';
 Compound component based on Radix Select.
 
 ```tsx
-import { Select } from 'calangoui';
+import { Select } from '@by2-ai/calangoui';
 
 <Select.Root>
   <Select.Trigger>
@@ -434,7 +434,7 @@ import { Select } from 'calangoui';
 ### Checkbox (Radix)
 
 ```tsx
-import { Checkbox } from 'calangoui';
+import { Checkbox } from '@by2-ai/calangoui';
 
 <Checkbox checked={val} onCheckedChange={setVal} />
 <Checkbox defaultChecked />
@@ -445,7 +445,7 @@ import { Checkbox } from 'calangoui';
 ### RadioGroup (Radix)
 
 ```tsx
-import { RadioGroup } from 'calangoui';
+import { RadioGroup } from '@by2-ai/calangoui';
 
 <RadioGroup.Root defaultValue="a" onValueChange={setValue}>
   <RadioGroup.Item value="a"><RadioGroup.Indicator /></RadioGroup.Item>
@@ -456,7 +456,7 @@ import { RadioGroup } from 'calangoui';
 ### Switch (Radix)
 
 ```tsx
-import { Switch } from 'calangoui';
+import { Switch } from '@by2-ai/calangoui';
 
 <Switch checked={on} onCheckedChange={setOn} />
 <Switch size="sm" />
@@ -469,7 +469,7 @@ import { Switch } from 'calangoui';
 ### Slider (Radix)
 
 ```tsx
-import { Slider } from 'calangoui';
+import { Slider } from '@by2-ai/calangoui';
 
 <Slider value={[50]} onValueChange={setVal} max={100} step={1} />
 <Slider defaultValue={[20, 80]} />  {/* range mode */}
@@ -480,7 +480,7 @@ import { Slider } from 'calangoui';
 Calendar popover component.
 
 ```tsx
-import { DatePicker } from 'calangoui';
+import { DatePicker } from '@by2-ai/calangoui';
 
 <DatePicker
   value={date}
@@ -497,7 +497,7 @@ import { DatePicker } from 'calangoui';
 Input with preset masks for Brazilian formats.
 
 ```tsx
-import { MaskedInput } from 'calangoui';
+import { MaskedInput } from '@by2-ai/calangoui';
 
 <MaskedInput mask="cpf" />          {/* 000.000.000-00 */}
 <MaskedInput mask="cnpj" />         {/* 00.000.000/0000-00 */}
@@ -524,7 +524,7 @@ import { MaskedInput } from 'calangoui';
 ### Badge
 
 ```tsx
-import { Badge } from 'calangoui';
+import { Badge } from '@by2-ai/calangoui';
 
 <Badge>Default</Badge>
 <Badge colorScheme="success">Success</Badge>
@@ -545,7 +545,7 @@ import { Badge } from 'calangoui';
 ### Alert
 
 ```tsx
-import { Alert, AlertTitle } from 'calangoui';
+import { Alert, AlertTitle } from '@by2-ai/calangoui';
 
 <Alert variant="info">
   <div>
@@ -565,7 +565,7 @@ import { Alert, AlertTitle } from 'calangoui';
 ### Progress
 
 ```tsx
-import { Progress } from 'calangoui';
+import { Progress } from '@by2-ai/calangoui';
 
 <Progress value={60} />
 <Progress value={25} size="sm" />
@@ -579,7 +579,7 @@ import { Progress } from 'calangoui';
 ### Spinner
 
 ```tsx
-import { Spinner } from 'calangoui';
+import { Spinner } from '@by2-ai/calangoui';
 
 <Spinner $size="sm" />
 <Spinner $size="md" />
@@ -592,7 +592,7 @@ import { Spinner } from 'calangoui';
 ### Skeleton
 
 ```tsx
-import { Skeleton } from 'calangoui';
+import { Skeleton } from '@by2-ai/calangoui';
 
 <Skeleton $w={200} $h={20} />
 <Skeleton $w="100%" $h={16} />
@@ -602,7 +602,7 @@ import { Skeleton } from 'calangoui';
 ### Toast (Radix)
 
 ```tsx
-import { Toast } from 'calangoui';
+import { Toast } from '@by2-ai/calangoui';
 
 <Toast.Provider>
   <Toast.Root open={open} onOpenChange={setOpen} $variant="success">
@@ -623,7 +623,7 @@ import { Toast } from 'calangoui';
 ### Dialog (Radix)
 
 ```tsx
-import { Dialog, Button } from 'calangoui';
+import { Dialog, Button } from '@by2-ai/calangoui';
 
 <Dialog.Root>
   <Dialog.Trigger asChild>
@@ -648,7 +648,7 @@ import { Dialog, Button } from 'calangoui';
 Same as Dialog but backdrop click does NOT close it.
 
 ```tsx
-import { AlertDialog, Button } from 'calangoui';
+import { AlertDialog, Button } from '@by2-ai/calangoui';
 
 <AlertDialog.Root>
   <AlertDialog.Trigger asChild><Button>Delete</Button></AlertDialog.Trigger>
@@ -671,7 +671,7 @@ import { AlertDialog, Button } from 'calangoui';
 Slides in from a side.
 
 ```tsx
-import { Dialog, Drawer, Button } from 'calangoui';
+import { Dialog, Drawer, Button } from '@by2-ai/calangoui';
 
 <Dialog.Root>
   <Dialog.Trigger asChild><Button>Open Drawer</Button></Dialog.Trigger>
@@ -689,7 +689,7 @@ import { Dialog, Drawer, Button } from 'calangoui';
 ### Popover (Radix)
 
 ```tsx
-import { Popover, Button } from 'calangoui';
+import { Popover, Button } from '@by2-ai/calangoui';
 
 <Popover.Root>
   <Popover.Trigger asChild><Button>Open</Button></Popover.Trigger>
@@ -705,7 +705,7 @@ import { Popover, Button } from 'calangoui';
 ### Tooltip (Radix)
 
 ```tsx
-import { Tooltip, Button } from 'calangoui';
+import { Tooltip, Button } from '@by2-ai/calangoui';
 
 <Tooltip.Provider>
   <Tooltip.Root>
@@ -723,7 +723,7 @@ import { Tooltip, Button } from 'calangoui';
 ### DropdownMenu (Radix)
 
 ```tsx
-import { DropdownMenu, Button } from 'calangoui';
+import { DropdownMenu, Button } from '@by2-ai/calangoui';
 
 <DropdownMenu.Root>
   <DropdownMenu.Trigger asChild><Button>Actions ▾</Button></DropdownMenu.Trigger>
@@ -748,7 +748,7 @@ import { DropdownMenu, Button } from 'calangoui';
 ### ContextMenu (Radix)
 
 ```tsx
-import { ContextMenu } from 'calangoui';
+import { ContextMenu } from '@by2-ai/calangoui';
 
 <ContextMenu.Root>
   <ContextMenu.Trigger>Right-click this area</ContextMenu.Trigger>
@@ -769,7 +769,7 @@ import { ContextMenu } from 'calangoui';
 ### Tabs (Radix)
 
 ```tsx
-import { Tabs } from 'calangoui';
+import { Tabs } from '@by2-ai/calangoui';
 
 <Tabs.Root defaultValue="tab1">
   <Tabs.List>
@@ -784,7 +784,7 @@ import { Tabs } from 'calangoui';
 ### Sidebar
 
 ```tsx
-import { Sidebar } from 'calangoui';
+import { Sidebar } from '@by2-ai/calangoui';
 
 <Sidebar.Root $collapsed={false} $width="240px">
   <Sidebar.Header>App Name</Sidebar.Header>
@@ -802,7 +802,7 @@ import { Sidebar } from 'calangoui';
 ### Breadcrumb
 
 ```tsx
-import { Breadcrumb } from 'calangoui';
+import { Breadcrumb } from '@by2-ai/calangoui';
 
 <Breadcrumb.Root aria-label="Breadcrumb">
   <Breadcrumb.Item><Breadcrumb.Link href="/">Home</Breadcrumb.Link></Breadcrumb.Item>
@@ -816,7 +816,7 @@ import { Breadcrumb } from 'calangoui';
 ### Pagination
 
 ```tsx
-import { Pagination } from 'calangoui';
+import { Pagination } from '@by2-ai/calangoui';
 
 <Pagination page={5} totalPages={20} onPageChange={setPage} siblings={1} />
 ```
@@ -824,7 +824,7 @@ import { Pagination } from 'calangoui';
 ### NavigationMenu (Radix)
 
 ```tsx
-import { NavigationMenu } from 'calangoui';
+import { NavigationMenu } from '@by2-ai/calangoui';
 
 <NavigationMenu.Root>
   <NavigationMenu.List>
@@ -848,7 +848,7 @@ import { NavigationMenu } from 'calangoui';
 ### Table
 
 ```tsx
-import { Table } from 'calangoui';
+import { Table } from '@by2-ai/calangoui';
 
 <Table.Root $striped $hoverable $compact>
   <Table.Header>
@@ -872,7 +872,7 @@ import { Table } from 'calangoui';
 ### Card
 
 ```tsx
-import { Card, Button } from 'calangoui';
+import { Card, Button } from '@by2-ai/calangoui';
 
 <Card.Root $variant="elevated">       {/* 'elevated' | 'outline' | 'filled' */}
   <Card.Header>
@@ -891,7 +891,7 @@ import { Card, Button } from 'calangoui';
 ### Avatar (Radix)
 
 ```tsx
-import { Avatar } from 'calangoui';
+import { Avatar } from '@by2-ai/calangoui';
 
 <Avatar.Root $size="md" $shape="circle">   {/* size: xs|sm|md|lg|xl, shape: circle|square */}
   <Avatar.Image src="https://..." alt="User" />
@@ -902,7 +902,7 @@ import { Avatar } from 'calangoui';
 ### Accordion (Radix)
 
 ```tsx
-import { Accordion } from 'calangoui';
+import { Accordion } from '@by2-ai/calangoui';
 
 <Accordion.Root type="single" defaultValue="item-1" collapsible>
   <Accordion.Item value="item-1">
@@ -921,7 +921,7 @@ import { Accordion } from 'calangoui';
 ### Tag
 
 ```tsx
-import { Tag } from 'calangoui';
+import { Tag } from '@by2-ai/calangoui';
 
 <Tag>Default</Tag>
 <Tag variant="outline" colorScheme="success">Success</Tag>
@@ -941,7 +941,7 @@ All charts auto-theme with calangoui. Requires `recharts` as peer dependency.
 ### BarChart
 
 ```tsx
-import { BarChart } from 'calangoui';
+import { BarChart } from '@by2-ai/calangoui';
 
 <BarChart
   data={[
@@ -968,7 +968,7 @@ import { BarChart } from 'calangoui';
 ### LineChart
 
 ```tsx
-import { LineChart } from 'calangoui';
+import { LineChart } from '@by2-ai/calangoui';
 
 <LineChart data={data} />
 <LineChart data={data} showDots={false} curved={false} color="#3B82F6" />
@@ -987,7 +987,7 @@ import { LineChart } from 'calangoui';
 ### AreaChart
 
 ```tsx
-import { AreaChart } from 'calangoui';
+import { AreaChart } from '@by2-ai/calangoui';
 
 <AreaChart data={data} color="#3B82F6" />
 
@@ -1006,7 +1006,7 @@ import { AreaChart } from 'calangoui';
 ### DonutChart / PieChart
 
 ```tsx
-import { DonutChart } from 'calangoui';
+import { DonutChart } from '@by2-ai/calangoui';
 
 <DonutChart
   data={[
@@ -1024,7 +1024,7 @@ import { DonutChart } from 'calangoui';
 ### RadarChart
 
 ```tsx
-import { RadarChart } from 'calangoui';
+import { RadarChart } from '@by2-ai/calangoui';
 
 <RadarChart
   data={[
@@ -1038,7 +1038,7 @@ import { RadarChart } from 'calangoui';
 ### RadialBarChart
 
 ```tsx
-import { RadialBarChart } from 'calangoui';
+import { RadialBarChart } from '@by2-ai/calangoui';
 
 <RadialBarChart
   data={[
@@ -1053,7 +1053,7 @@ import { RadialBarChart } from 'calangoui';
 Inline mini chart for tables and cards.
 
 ```tsx
-import { SparkLine } from 'calangoui';
+import { SparkLine } from '@by2-ai/calangoui';
 
 <SparkLine data={[12, 18, 14, 22, 19, 28]} />
 <SparkLine data={data} area color="#22C55E" />
@@ -1065,7 +1065,7 @@ import { SparkLine } from 'calangoui';
 KPI card with trend and sparkline.
 
 ```tsx
-import { StatCard, HiCurrencyDollar } from 'calangoui';
+import { StatCard, HiCurrencyDollar } from '@by2-ai/calangoui';
 
 <StatCard
   label="Revenue"
@@ -1084,7 +1084,7 @@ import { StatCard, HiCurrencyDollar } from 'calangoui';
 ### CommandPalette
 
 ```tsx
-import { CommandPalette } from 'calangoui';
+import { CommandPalette } from '@by2-ai/calangoui';
 
 <CommandPalette
   open={open}
@@ -1107,7 +1107,7 @@ import { CommandPalette } from 'calangoui';
 ### Stepper
 
 ```tsx
-import { Stepper } from 'calangoui';
+import { Stepper } from '@by2-ai/calangoui';
 
 <Stepper
   activeStep={1}
@@ -1136,7 +1136,7 @@ import { Stepper } from 'calangoui';
 ### Collapsible (Radix)
 
 ```tsx
-import { Collapsible, Button } from 'calangoui';
+import { Collapsible, Button } from '@by2-ai/calangoui';
 
 <Collapsible.Root>
   <Collapsible.Trigger asChild>
@@ -1151,7 +1151,7 @@ import { Collapsible, Button } from 'calangoui';
 ### HoverCard (Radix)
 
 ```tsx
-import { HoverCard } from 'calangoui';
+import { HoverCard } from '@by2-ai/calangoui';
 
 <HoverCard.Root openDelay={200}>
   <HoverCard.Trigger asChild><span>@username</span></HoverCard.Trigger>
@@ -1167,7 +1167,7 @@ import { HoverCard } from 'calangoui';
 ### ScrollArea (Radix)
 
 ```tsx
-import { ScrollArea } from 'calangoui';
+import { ScrollArea } from '@by2-ai/calangoui';
 
 <ScrollArea.Root style={{ maxHeight: '200px' }}>
   <ScrollArea.Viewport style={{ maxHeight: '200px' }}>
@@ -1182,7 +1182,7 @@ import { ScrollArea } from 'calangoui';
 ### AspectRatio (Radix)
 
 ```tsx
-import { AspectRatio } from 'calangoui';
+import { AspectRatio } from '@by2-ai/calangoui';
 
 <AspectRatio ratio={16 / 9}>
   <img src="..." style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
@@ -1192,7 +1192,7 @@ import { AspectRatio } from 'calangoui';
 ### Separator (Radix)
 
 ```tsx
-import { Separator } from 'calangoui';
+import { Separator } from '@by2-ai/calangoui';
 
 <Separator orientation="horizontal" />
 <Separator orientation="vertical" decorative />
@@ -1207,7 +1207,7 @@ import { Separator } from 'calangoui';
 ### Usage
 
 ```tsx
-import { HiSparkles, HiCheck, FiGithub, SiReact } from 'calangoui';
+import { HiSparkles, HiCheck, FiGithub, SiReact } from '@by2-ai/calangoui';
 
 <HiSparkles size={24} />
 <FiGithub size={20} />
@@ -1225,7 +1225,7 @@ import { HiSparkles, HiCheck, FiGithub, SiReact } from 'calangoui';
 ### With RoundedIcon
 
 ```tsx
-import { RoundedIcon, HiCheckCircle } from 'calangoui';
+import { RoundedIcon, HiCheckCircle } from '@by2-ai/calangoui';
 
 <RoundedIcon icon={<HiCheckCircle />} variant="soft" color="#22C55E" size="lg" />
 ```
@@ -1321,7 +1321,7 @@ import type {
   CommandPaletteProps, StepperProps, StepItem, StepStatus,
   RoundedIconProps, RoundedIconSize, RoundedIconVariant,
   DatePickerProps,
-} from 'calangoui';
+} from '@by2-ai/calangoui';
 ```
 
 ---

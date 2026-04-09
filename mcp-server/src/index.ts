@@ -182,6 +182,98 @@ function createServer() {
     }
   );
 
+  // ─── setup ──────────────────────────────────────────────────────────────────
+  s.tool(
+    'setup',
+    'Get complete setup instructions for calangoui: install command, provider setup, tsconfig, and first component example.',
+    { _: z.string().optional().describe('No parameters required') },
+    async () => {
+      const text = `# calangoui Setup Guide
+
+## Install
+
+\`\`\`bash
+npm install @by2-ai/calangoui styled-components recharts react-icons
+\`\`\`
+
+## Peer Dependencies
+
+\`\`\`bash
+npm install react react-dom styled-components
+\`\`\`
+
+## Wrap your app with CalangoUIProvider
+
+\`\`\`tsx
+// main.tsx or _app.tsx
+import { CalangoUIProvider } from '@by2-ai/calangoui';
+
+function App() {
+  return (
+    <CalangoUIProvider defaultTheme="system">
+      <YourApp />
+    </CalangoUIProvider>
+  );
+}
+\`\`\`
+
+## Provider Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| \`defaultTheme\` | \`'dark' \\| 'light' \\| 'system'\` | \`'system'\` | Initial theme. 'system' follows OS preference |
+
+## First Component
+
+\`\`\`tsx
+import { Button, Input, Stack } from '@by2-ai/calangoui';
+
+export function LoginForm() {
+  return (
+    <Stack $spacing="16px" style={{ maxWidth: 320 }}>
+      <Input placeholder="Email" type="email" />
+      <Input placeholder="Password" type="password" />
+      <Button variant="solid">Sign in</Button>
+    </Stack>
+  );
+}
+\`\`\`
+
+## Theme Toggle
+
+\`\`\`tsx
+import { useTheme } from '@by2-ai/calangoui';
+
+function ThemeToggle() {
+  const { isDark, toggleTheme } = useTheme();
+  return (
+    <button onClick={toggleTheme}>
+      {isDark ? 'Switch to Light' : 'Switch to Dark'}
+    </button>
+  );
+}
+\`\`\`
+
+## MCP Server (for AI agents)
+
+Connect directly to query components, tokens, and examples:
+
+\`\`\`bash
+# Claude Code
+claude mcp add calangoui --transport http https://mcp.calangoui.by2.com.br/mcp
+\`\`\`
+
+Available tools: list_components, get_component, get_tokens, search_components, setup
+
+## Docs
+
+- Full reference (LLM-optimized): https://calangoui.by2.com.br/llm
+- Interactive docs: https://calangoui.by2.com.br
+`;
+      return { content: [{ type: 'text', text }] };
+    }
+  );
+
   return s;
 }
 

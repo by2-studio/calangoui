@@ -27,7 +27,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Box',
     category: 'primitives',
-    import: "import { Box } from 'calangoui'",
+    import: "import { Box } from '@by2-ai/calangoui'",
     description: 'Generic layout primitive. A div with theme-aware styling props.',
     keywords: ['layout', 'wrapper', 'container', 'div', 'block'],
     props: [
@@ -42,7 +42,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Text',
     category: 'primitives',
-    import: "import { Text } from 'calangoui'",
+    import: "import { Text } from '@by2-ai/calangoui'",
     description: 'Inline text component with typography token support.',
     keywords: ['typography', 'paragraph', 'span', 'font', 'body'],
     props: [
@@ -59,7 +59,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Heading',
     category: 'primitives',
-    import: "import { Heading } from 'calangoui'",
+    import: "import { Heading } from '@by2-ai/calangoui'",
     description: 'Semantic heading component (h1–h6) with bold typography.',
     keywords: ['h1', 'h2', 'h3', 'title', 'header', 'typography'],
     props: [
@@ -74,7 +74,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Flex',
     category: 'primitives',
-    import: "import { Flex } from 'calangoui'",
+    import: "import { Flex } from '@by2-ai/calangoui'",
     description: 'Flexbox layout container with shorthand props.',
     keywords: ['flexbox', 'row', 'column', 'layout', 'align', 'justify', 'gap'],
     props: [
@@ -93,7 +93,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Stack',
     category: 'primitives',
-    import: "import { Stack } from 'calangoui'",
+    import: "import { Stack } from '@by2-ai/calangoui'",
     description: 'Vertical flex stack with consistent spacing between children.',
     keywords: ['vertical', 'spacing', 'layout', 'gap', 'stack'],
     props: [
@@ -107,7 +107,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Grid',
     category: 'primitives',
-    import: "import { Grid } from 'calangoui'",
+    import: "import { Grid } from '@by2-ai/calangoui'",
     description: 'CSS Grid layout container.',
     keywords: ['grid', 'columns', 'layout', 'css grid', 'template'],
     props: [
@@ -123,7 +123,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Divider',
     category: 'primitives',
-    import: "import { Divider } from 'calangoui'",
+    import: "import { Divider } from '@by2-ai/calangoui'",
     description: 'Horizontal or vertical separator line using theme border color.',
     keywords: ['separator', 'hr', 'rule', 'line', 'divider'],
     props: [
@@ -138,7 +138,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Icon',
     category: 'primitives',
-    import: "import { Icon } from 'calangoui'",
+    import: "import { Icon } from '@by2-ai/calangoui'",
     description: 'Wrapper for react-icons with consistent sizing and color.',
     keywords: ['react-icons', 'symbol', 'svg', 'icon'],
     props: [
@@ -148,7 +148,7 @@ export const components: ComponentSpec[] = [
     ],
     variants: [],
     examples: [
-      { label: 'Basic', code: `import { FiSearch } from 'calangoui'\n<Icon icon={FiSearch} size={20} />` },
+      { label: 'Basic', code: `import { FiSearch } from '@by2-ai/calangoui'\n<Icon icon={FiSearch} size={20} />` },
     ],
   },
 
@@ -156,7 +156,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Button',
     category: 'inputs',
-    import: "import { Button } from 'calangoui'",
+    import: "import { Button } from '@by2-ai/calangoui'",
     description: 'Primary action element with multiple variants and sizes.',
     keywords: ['action', 'click', 'submit', 'cta', 'primary', 'outline', 'ghost', 'link'],
     props: [
@@ -178,7 +178,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Input',
     category: 'inputs',
-    import: "import { Input, InputGroup, Label, ErrorText } from 'calangoui'",
+    import: "import { Input, InputGroup, Label, ErrorText } from '@by2-ai/calangoui'",
     description: 'Text input with optional left/right elements, error state, and sizes.',
     keywords: ['text field', 'form', 'email', 'password', 'text', 'input'],
     props: [
@@ -199,7 +199,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Textarea',
     category: 'inputs',
-    import: "import { Textarea } from 'calangoui'",
+    import: "import { Textarea } from '@by2-ai/calangoui'",
     description: 'Multi-line text input with resize control and error state.',
     keywords: ['multiline', 'text area', 'form', 'comment', 'description'],
     props: [
@@ -216,7 +216,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Select',
     category: 'inputs',
-    import: "import { Select } from 'calangoui'",
+    import: "import { Select } from '@by2-ai/calangoui'",
     description: 'Radix UI-based dropdown select with keyboard navigation and theming.',
     keywords: ['dropdown', 'picker', 'options', 'choose', 'select'],
     props: [
@@ -234,7 +234,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Checkbox',
     category: 'inputs',
-    import: "import { Checkbox } from 'calangoui'",
+    import: "import { Checkbox } from '@by2-ai/calangoui'",
     description: 'Accessible checkbox supporting checked, unchecked, and indeterminate states.',
     keywords: ['toggle', 'boolean', 'check', 'mark', 'select'],
     props: [
@@ -251,7 +251,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'RadioGroup',
     category: 'inputs',
-    import: "import { RadioGroup } from 'calangoui'",
+    import: "import { RadioGroup } from '@by2-ai/calangoui'",
     description: 'Accessible radio group for single-selection from multiple options.',
     keywords: ['radio', 'options', 'select one', 'group', 'choice'],
     props: [
@@ -268,7 +268,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Switch',
     category: 'inputs',
-    import: "import { Switch } from 'calangoui'",
+    import: "import { Switch } from '@by2-ai/calangoui'",
     description: 'Toggle switch for boolean on/off states.',
     keywords: ['toggle', 'on off', 'boolean', 'switch'],
     props: [
@@ -286,7 +286,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Slider',
     category: 'inputs',
-    import: "import { Slider } from 'calangoui'",
+    import: "import { Slider } from '@by2-ai/calangoui'",
     description: 'Range slider for numeric value selection.',
     keywords: ['range', 'value', 'knob', 'drag', 'slider', 'numeric'],
     props: [
@@ -304,7 +304,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'DatePicker',
     category: 'inputs',
-    import: "import { DatePicker } from 'calangoui'",
+    import: "import { DatePicker } from '@by2-ai/calangoui'",
     description: 'Calendar-based date picker with single date and range modes.',
     keywords: ['calendar', 'date', 'picker', 'time', 'schedule'],
     props: [
@@ -321,7 +321,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'MaskedInput',
     category: 'inputs',
-    import: "import { MaskedInput } from 'calangoui'",
+    import: "import { MaskedInput } from '@by2-ai/calangoui'",
     description: 'Input with built-in masks for phone, CPF, CNPJ, date, and time.',
     keywords: ['phone', 'cpf', 'cnpj', 'format', 'mask', 'brazil'],
     props: [
@@ -339,7 +339,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'SearchBar',
     category: 'inputs',
-    import: "import { SearchBar } from 'calangoui'",
+    import: "import { SearchBar } from '@by2-ai/calangoui'",
     description: 'Search input with embedded icon, keyboard shortcut badge, clear button, and loading state.',
     keywords: ['search', 'filter', 'find', 'query', 'lookup', 'cmd k'],
     props: [
@@ -363,7 +363,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Badge',
     category: 'feedback',
-    import: "import { Badge } from 'calangoui'",
+    import: "import { Badge } from '@by2-ai/calangoui'",
     description: 'Small status label with color variants and optional dot.',
     keywords: ['label', 'tag', 'status', 'count', 'dot', 'chip'],
     props: [
@@ -380,7 +380,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Alert',
     category: 'feedback',
-    import: "import { Alert, AlertTitle } from 'calangoui'",
+    import: "import { Alert, AlertTitle } from '@by2-ai/calangoui'",
     description: 'Contextual message block with icon, title, and description.',
     keywords: ['notification', 'warning', 'error', 'success', 'info', 'message', 'alert'],
     props: [
@@ -396,7 +396,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Progress',
     category: 'feedback',
-    import: "import { Progress } from 'calangoui'",
+    import: "import { Progress } from '@by2-ai/calangoui'",
     description: 'Horizontal progress bar with percentage fill.',
     keywords: ['loading', 'bar', 'percentage', 'progress', 'step'],
     props: [
@@ -412,7 +412,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Spinner',
     category: 'feedback',
-    import: "import { Spinner } from 'calangoui'",
+    import: "import { Spinner } from '@by2-ai/calangoui'",
     description: 'Animated loading spinner.',
     keywords: ['loading', 'rotating', 'wait', 'spinner'],
     props: [
@@ -427,7 +427,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Skeleton',
     category: 'feedback',
-    import: "import { Skeleton } from 'calangoui'",
+    import: "import { Skeleton } from '@by2-ai/calangoui'",
     description: 'Animated placeholder for loading states.',
     keywords: ['placeholder', 'loading state', 'shimmer', 'skeleton'],
     props: [
@@ -444,7 +444,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Toast',
     category: 'feedback',
-    import: "import { Toast } from 'calangoui'",
+    import: "import { Toast } from '@by2-ai/calangoui'",
     description: 'Radix-based toast notification system with queue management.',
     keywords: ['notification', 'snackbar', 'message', 'alert', 'toast'],
     props: [
@@ -463,7 +463,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Dialog',
     category: 'overlay',
-    import: "import { Dialog } from 'calangoui'",
+    import: "import { Dialog } from '@by2-ai/calangoui'",
     description: 'Modal dialog built on Radix UI with backdrop, header, and footer slots.',
     keywords: ['modal', 'popup', 'overlay', 'window', 'dialog'],
     props: [
@@ -479,7 +479,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'AlertDialog',
     category: 'overlay',
-    import: "import { AlertDialog } from 'calangoui'",
+    import: "import { AlertDialog } from '@by2-ai/calangoui'",
     description: 'Confirmation dialog for destructive actions. Cannot be dismissed by backdrop click.',
     keywords: ['confirm', 'destructive', 'modal', 'danger', 'delete'],
     props: [
@@ -495,7 +495,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Drawer',
     category: 'overlay',
-    import: "import { Drawer } from 'calangoui'",
+    import: "import { Drawer } from '@by2-ai/calangoui'",
     description: 'Side panel that slides in from any edge.',
     keywords: ['side panel', 'slide', 'panel', 'sheet', 'drawer'],
     props: [
@@ -511,7 +511,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Popover',
     category: 'overlay',
-    import: "import { Popover } from 'calangoui'",
+    import: "import { Popover } from '@by2-ai/calangoui'",
     description: 'Floating panel anchored to a trigger element.',
     keywords: ['floating', 'popup', 'context', 'tooltip', 'popover'],
     props: [
@@ -527,7 +527,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Tooltip',
     category: 'overlay',
-    import: "import { Tooltip } from 'calangoui'",
+    import: "import { Tooltip } from '@by2-ai/calangoui'",
     description: 'Short hint shown on hover or focus.',
     keywords: ['hint', 'help', 'label', 'hover', 'tooltip'],
     props: [
@@ -543,7 +543,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'DropdownMenu',
     category: 'overlay',
-    import: "import { DropdownMenu } from 'calangoui'",
+    import: "import { DropdownMenu } from '@by2-ai/calangoui'",
     description: 'Accessible dropdown menu triggered by a button.',
     keywords: ['menu', 'context', 'actions', 'items', 'dropdown'],
     props: [
@@ -558,7 +558,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'ContextMenu',
     category: 'overlay',
-    import: "import { ContextMenu } from 'calangoui'",
+    import: "import { ContextMenu } from '@by2-ai/calangoui'",
     description: 'Right-click contextual menu.',
     keywords: ['right click', 'menu', 'actions', 'context', 'contextmenu'],
     props: [],
@@ -572,7 +572,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Tabs',
     category: 'navigation',
-    import: "import { Tabs } from 'calangoui'",
+    import: "import { Tabs } from '@by2-ai/calangoui'",
     description: 'Tab panels with keyboard navigation.',
     keywords: ['panels', 'router', 'content', 'tab', 'navigation'],
     props: [
@@ -588,7 +588,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Breadcrumb',
     category: 'navigation',
-    import: "import { Breadcrumb } from 'calangoui'",
+    import: "import { Breadcrumb } from '@by2-ai/calangoui'",
     description: 'Navigation trail showing current location in a hierarchy.',
     keywords: ['path', 'navigation', 'trail', 'location', 'breadcrumb'],
     props: [
@@ -602,7 +602,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Pagination',
     category: 'navigation',
-    import: "import { Pagination } from 'calangoui'",
+    import: "import { Pagination } from '@by2-ai/calangoui'",
     description: 'Page navigation for lists and tables.',
     keywords: ['pages', 'list', 'table', 'next', 'prev', 'pagination'],
     props: [
@@ -618,7 +618,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Sidebar',
     category: 'navigation',
-    import: "import { Sidebar } from 'calangoui'",
+    import: "import { Sidebar } from '@by2-ai/calangoui'",
     description: 'Vertical navigation sidebar with grouped items.',
     keywords: ['nav', 'drawer', 'menu', 'navigation', 'sidebar'],
     props: [
@@ -634,7 +634,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'NavigationMenu',
     category: 'navigation',
-    import: "import { NavigationMenu } from 'calangoui'",
+    import: "import { NavigationMenu } from '@by2-ai/calangoui'",
     description: 'Horizontal top navigation with dropdown submenus.',
     keywords: ['links', 'header', 'menu', 'nav', 'horizontal'],
     props: [],
@@ -647,7 +647,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'NavTopBar',
     category: 'navigation',
-    import: "import { NavTopBar } from 'calangoui'",
+    import: "import { NavTopBar } from '@by2-ai/calangoui'",
     description: 'Horizontal top navigation bar with logo, nav links, and an actions slot.',
     keywords: ['header', 'topbar', 'navbar', 'navigation', 'links', 'logo', 'sticky'],
     props: [
@@ -673,7 +673,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Table',
     category: 'data',
-    import: "import { Table } from 'calangoui'",
+    import: "import { Table } from '@by2-ai/calangoui'",
     description: 'Data table with styled rows and column headers.',
     keywords: ['grid', 'rows', 'data', 'columns', 'list', 'table'],
     props: [
@@ -688,7 +688,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Card',
     category: 'data',
-    import: "import { Card } from 'calangoui'",
+    import: "import { Card } from '@by2-ai/calangoui'",
     description: 'Compound card component with Root, Header, Body, and Footer slots.',
     keywords: ['container', 'panel', 'paper', 'surface', 'card'],
     props: [
@@ -703,7 +703,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Avatar',
     category: 'data',
-    import: "import { Avatar } from 'calangoui'",
+    import: "import { Avatar } from '@by2-ai/calangoui'",
     description: 'User avatar with image, fallback initials, and status indicator.',
     keywords: ['user', 'profile', 'image', 'photo', 'avatar'],
     props: [
@@ -722,7 +722,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Accordion',
     category: 'data',
-    import: "import { Accordion } from 'calangoui'",
+    import: "import { Accordion } from '@by2-ai/calangoui'",
     description: 'Collapsible sections for FAQs or grouped content.',
     keywords: ['collapse', 'expand', 'faq', 'details', 'accordion'],
     props: [
@@ -737,7 +737,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Tag',
     category: 'data',
-    import: "import { Tag } from 'calangoui'",
+    import: "import { Tag } from '@by2-ai/calangoui'",
     description: 'Removable or static tag/chip for categories and labels.',
     keywords: ['label', 'chip', 'category', 'keyword', 'tag'],
     props: [
@@ -756,7 +756,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'CommandPalette',
     category: 'advanced',
-    import: "import { CommandPalette } from 'calangoui'",
+    import: "import { CommandPalette } from '@by2-ai/calangoui'",
     description: 'Full-screen command palette with search, grouped items, and ⌘K shortcut.',
     keywords: ['search', 'shortcut', 'cmd k', 'command', 'palette', 'spotlight'],
     props: [
@@ -773,7 +773,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Stepper',
     category: 'advanced',
-    import: "import { Stepper } from 'calangoui'",
+    import: "import { Stepper } from '@by2-ai/calangoui'",
     description: 'Multi-step wizard indicator with status tracking.',
     keywords: ['wizard', 'steps', 'flow', 'progress', 'stepper', 'onboarding'],
     props: [
@@ -789,7 +789,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Collapsible',
     category: 'advanced',
-    import: "import { Collapsible } from 'calangoui'",
+    import: "import { Collapsible } from '@by2-ai/calangoui'",
     description: 'Single collapsible section with animated height transition.',
     keywords: ['collapse', 'toggle', 'expand', 'hide', 'show', 'collapsible'],
     props: [
@@ -805,7 +805,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'HoverCard',
     category: 'advanced',
-    import: "import { HoverCard } from 'calangoui'",
+    import: "import { HoverCard } from '@by2-ai/calangoui'",
     description: 'Rich preview card shown on hover after a delay.',
     keywords: ['preview', 'floating', 'hover', 'card', 'tooltip'],
     props: [
@@ -820,7 +820,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'ScrollArea',
     category: 'advanced',
-    import: "import { ScrollArea } from 'calangoui'",
+    import: "import { ScrollArea } from '@by2-ai/calangoui'",
     description: 'Custom-styled scrollable container with themed scrollbar.',
     keywords: ['custom scrollbar', 'overflow', 'scroll', 'scrollable'],
     props: [
@@ -835,7 +835,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'AspectRatio',
     category: 'advanced',
-    import: "import { AspectRatio } from 'calangoui'",
+    import: "import { AspectRatio } from '@by2-ai/calangoui'",
     description: 'Constrains children to a specific aspect ratio.',
     keywords: ['responsive', 'image', 'ratio', '16:9', 'video', 'aspect'],
     props: [
@@ -849,7 +849,7 @@ export const components: ComponentSpec[] = [
   {
     name: 'Separator',
     category: 'advanced',
-    import: "import { Separator } from 'calangoui'",
+    import: "import { Separator } from '@by2-ai/calangoui'",
     description: 'Radix UI semantic separator for visual and structural dividing.',
     keywords: ['divider', 'hr', 'line', 'rule', 'separator'],
     props: [
